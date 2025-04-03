@@ -1,3 +1,4 @@
+
 class Blur {
     div;
     constructor(message) {
@@ -6,7 +7,7 @@ class Blur {
         this.div.id = "blurred_background";
         this.div.innerHTML = `<style>
         #blurred_background{
-            position:absolute;
+            position:fixed;
             top:0;
             left:0;
             height:100vh;
@@ -40,8 +41,8 @@ const suffix = (Math.random()*100).toFixed().toString();
 document.querySelector("body").insertAdjacentHTML("beforeend", `
     <style>
     #fab${suffix}, #modal${suffix}{
-        position: absolute;
-        bottom: 1em;
+        position: fixed;
+        bottom: 7em;
         right: 1em;
     }
     #clear${suffix}{
@@ -50,10 +51,10 @@ document.querySelector("body").insertAdjacentHTML("beforeend", `
         right: 1em;
     }
     </style>
-    <button id="fab${suffix}">Tell me</button>
+    <button id="fab${suffix}">Order</button>
     `);
 
 document.querySelector(`#fab${suffix}`).addEventListener("click", evt=>{
-    const blur = new Blur(`<div id="modal${suffix}"><div><x-chat /></div><button id="clear${suffix}">clear</button></div>`);
+    const blur = new Blur(`<div id="modal${suffix}"><div><x-chat /></div><button id="clear${suffix}">close</button></div>`);
     document.querySelector(`#clear${suffix}`).addEventListener("click", () => blur.close());
 });
