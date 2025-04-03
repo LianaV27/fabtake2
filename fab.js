@@ -43,7 +43,7 @@ document.querySelector("body").insertAdjacentHTML("beforeend", `
     #fab${suffix}, #modal${suffix}{
         position: fixed;
         bottom: 7em;
-        right: 0.5em;
+        right: 1em;
     }
     #clear${suffix}{
         position: absolute;
